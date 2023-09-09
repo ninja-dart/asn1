@@ -14,7 +14,7 @@ class MutableIterable implements Iterable<int> {
   Iterable<T> cast<T>() => _base.cast<T>();
 
   @override
-  bool contains(Object element) => _base.contains(element);
+  bool contains(Object? element) => _base.contains(element);
 
   @override
   int elementAt(int index) => _base.elementAt(index);
@@ -29,7 +29,7 @@ class MutableIterable implements Iterable<int> {
   int get first => _base.first;
 
   @override
-  int firstWhere(bool Function(int element) test, {int Function() orElse}) =>
+  int firstWhere(bool Function(int element) test, {int Function()? orElse}) =>
       _base.firstWhere(test, orElse: orElse);
 
   @override
@@ -58,7 +58,7 @@ class MutableIterable implements Iterable<int> {
   int get last => _base.last;
 
   @override
-  int lastWhere(bool Function(int element) test, {int Function() orElse}) =>
+  int lastWhere(bool Function(int element) test, {int Function()? orElse}) =>
       _base.lastWhere(test, orElse: orElse);
 
   int get length => _base.length;
@@ -67,13 +67,14 @@ class MutableIterable implements Iterable<int> {
   Iterable<T> map<T>(T Function(int element) f) => _base.map(f);
 
   @override
-  int reduce(int Function(int value, int element) combine) => _base.reduce(combine);
+  int reduce(int Function(int value, int element) combine) =>
+      _base.reduce(combine);
 
   @override
   int get single => _base.single;
 
   @override
-  int singleWhere(bool Function(int element) test, {int Function() orElse}) {
+  int singleWhere(bool Function(int element) test, {int Function()? orElse}) {
     return _base.singleWhere(test, orElse: orElse);
   }
 
@@ -81,13 +82,15 @@ class MutableIterable implements Iterable<int> {
   Iterable<int> skip(int n) => _base.skip(n);
 
   @override
-  Iterable<int> skipWhile(bool Function(int value) test) => _base.skipWhile(test);
+  Iterable<int> skipWhile(bool Function(int value) test) =>
+      _base.skipWhile(test);
 
   @override
   Iterable<int> take(int n) => _base.take(n);
 
   @override
-  Iterable<int> takeWhile(bool Function(int value) test) => _base.takeWhile(test);
+  Iterable<int> takeWhile(bool Function(int value) test) =>
+      _base.takeWhile(test);
 
   @override
   List<int> toList({bool growable = true}) => _base.toList(growable: growable);
